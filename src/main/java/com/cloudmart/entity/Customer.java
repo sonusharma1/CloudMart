@@ -24,7 +24,7 @@ public class Customer {
     private String password;
 
     @OneToOne(mappedBy = "customer", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    private Cart cart;
+    private Cart cart=new Cart();
 
     @OneToMany(mappedBy = "customer")
     private List<CustomerOrder> customerOrderList;
