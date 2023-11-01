@@ -46,7 +46,9 @@ public class CartServiceImpl implements CartService{
             Customer customer = customerRepository.findById(customerId).get();
             Cart cart = customer.getCart();
             cartitems.setCart(cart);
+            cartitemsRepository.save(cartitems);
             cart.getCartitemsList().add(cartitems);
+            response.setSuccess(true);
         } catch (Exception e) {
             response.setSuccess(false);
             response.getErrorMessages().add("Failed to adding in cart");
