@@ -15,17 +15,16 @@ import java.util.List;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id=31;
+    private int id;
     private String name;
     private String  surName;
     private String  contactNumber;
-    private String  emailAdress;
-    private String  adress;
-
-
+    private String  emailAddress;
+    private String  address;
+    private String password;
 
     @OneToOne(mappedBy = "customer", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    private Cart cart;
+    private Cart cart=new Cart();
 
     @OneToMany(mappedBy = "customer")
     private List<CustomerOrder> customerOrderList;

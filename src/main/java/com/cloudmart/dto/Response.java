@@ -11,8 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 @ToString
 public class Response {
-    private boolean status;
-    private List<String> errorMessages=new ArrayList<>();
-    private Object responseData;
-    private Integer pages;
+    private boolean isSuccess = false;
+    private List<String> errorMessages = new ArrayList<>();
+    private Object responseData = null;
 }
