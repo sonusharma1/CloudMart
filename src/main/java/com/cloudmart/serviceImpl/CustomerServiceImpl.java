@@ -1,6 +1,7 @@
 package com.cloudmart.serviceImpl;
 
 import com.cloudmart.dto.Response;
+import com.cloudmart.entity.Cart;
 import com.cloudmart.entity.Customer;
 import com.cloudmart.repository.CustomerRepository;
 import com.cloudmart.service.CustomerService;
@@ -29,6 +30,7 @@ public class CustomerServiceImpl implements CustomerService {
             Optional<Customer> existingCustomer = customerRepository.findFirstByNameAndContactNumber(customer.getName(), customer.getContactNumber());
             // if not present
             if (existingCustomer.isEmpty()) {
+                customer.getCart().setCustomer(customer);
                 // save customer
                 Customer newCustomer = customerRepository.save(customer);
                 response.setResponseData(newCustomer);
