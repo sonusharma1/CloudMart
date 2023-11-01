@@ -17,7 +17,7 @@ public class Cartitems {
     private int quantity;
     private double totalPrice;
 
-   @JsonIgnore
+    @JsonIgnore
     @ManyToOne
     private Cart cart;
 
