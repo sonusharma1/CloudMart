@@ -8,6 +8,7 @@ public class CloudMartApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CloudMartApplication.class, args);
+		System.out.println("CloudMart App is Running...");
 	}
 
 }
