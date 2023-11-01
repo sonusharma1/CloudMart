@@ -8,12 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+@RestController
+@RequestMapping("product")
 public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @PostMapping("/addProduct")
+    @PostMapping("addProduct")
     public ResponseEntity<Response> addProduct(@RequestBody Product product) {
         Response response = productService.addProduct(product);
         return new ResponseEntity<>(response, response.isSuccess() ? HttpStatus.OK : HttpStatus.NOT_FOUND);
