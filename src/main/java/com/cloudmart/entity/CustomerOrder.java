@@ -26,5 +26,4 @@ public class CustomerOrder {
     @OneToMany(mappedBy = "customerOrder")
     List<Orderitem> orderitemList;
 
-
 }
