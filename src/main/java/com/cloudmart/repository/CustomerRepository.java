@@ -8,7 +8,7 @@ public interface CustomerRepository extends JpaRepository<Customer, Integer> {
 
 
 
-    Customer findByEmailAddress(String emailAdress);
+    Customer findByEmailAddress(String emailAddress);
 
 
 
