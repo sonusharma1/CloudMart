@@ -8,11 +8,9 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @ToString
 public class Response {
-    private boolean status;
+    private boolean isSuccess=false;
     private List<String> errorMessages=new ArrayList<>();
-    private Object responseData;
-    private Integer pages;
+    private Object responseData=null;
 }
