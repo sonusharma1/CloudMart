@@ -1,4 +1,4 @@
-package com.cloudmart.serviceImpl;
+package com.cloudmart.service;
 
 import com.cloudmart.dto.Response;
 import com.cloudmart.entity.Cart;
