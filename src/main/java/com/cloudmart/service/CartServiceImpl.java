@@ -100,18 +100,14 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public Response getCartItems(Integer customerId) {
+    public Response findCartItems(Integer customerId) {
         Response response = new Response();
         try {
             Customer customer = customerRepository.findById(customerId).get();
-
-            Cart cart = cartRepository.findById(customer.getCart().getId()).get();
-            response.setResponseData(cart);
+            response.setResponseData(customer.getCart().getCartitemsList());
             response.setSuccess(true);
-
-        } catch (Exception exception) {
-            response.setSuccess(false);
-            response.getErrorMessages().add("getCartItems");
+        } catch (Exception e) {
+            response.getErrorMessages().add("error in findCartItems");
         }
         return response;
     }
