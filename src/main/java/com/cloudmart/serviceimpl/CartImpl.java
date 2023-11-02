@@ -1,4 +1,4 @@
-package com.cloudmart.service;
+package com.cloudmart.serviceimpl;
 
 import com.cloudmart.dto.Response;
 import com.cloudmart.entity.Cart;
@@ -9,14 +9,13 @@ import com.cloudmart.repository.CartRepository;
 import com.cloudmart.repository.CartitemsRepository;
 import com.cloudmart.repository.CustomerRepository;
 import com.cloudmart.repository.ProductRepository;
+import com.cloudmart.service.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-
 @Service
-public class CartServiceImpl implements CartService{
+public class CartImpl implements CartService {
 
     @Autowired
     private CartRepository cartRepository;
