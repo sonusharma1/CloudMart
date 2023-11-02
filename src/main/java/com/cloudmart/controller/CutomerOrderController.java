@@ -19,7 +19,7 @@ public class CutomerOrderController {
     CustomerOrderService customerOrderServiceImpl;
 
 
-    @PostMapping("processOrder")
+    @PostMapping("/processOrder")
     public ResponseEntity<Response> processOrder(
             @RequestParam(name = "customerId", required = true) Integer customerId
     ) {

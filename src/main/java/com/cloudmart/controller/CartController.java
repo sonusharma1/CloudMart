@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController("cart")
+@RestController()
 public class CartController {
 
     @Autowired
     private CartService cartService;
 
-    @PostMapping("addToCart")
+    @PostMapping("/addToCart")
     public ResponseEntity<Response> addToCart(
             @RequestParam(name = "customerId", required = true) Integer customerId,
             @RequestParam(name = "productId", required = true) Integer productId,
