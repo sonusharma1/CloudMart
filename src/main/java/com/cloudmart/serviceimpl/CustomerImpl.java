@@ -1,14 +1,12 @@
-package com.cloudmart.service;
+package com.cloudmart.serviceimpl;
 
 import com.cloudmart.dto.Response;
-import com.cloudmart.entity.Cart;
 import com.cloudmart.entity.Customer;
 import com.cloudmart.repository.CustomerRepository;
 import com.cloudmart.service.CustomerService;
 import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,7 +15,7 @@ import java.util.Optional;
 
 @Slf4j
 @Service
-public class CustomerServiceImpl implements CustomerService {
+public class CustomerImpl implements CustomerService {
     @Autowired
     CustomerRepository customerRepository;
 

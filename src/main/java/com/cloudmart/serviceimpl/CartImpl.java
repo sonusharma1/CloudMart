@@ -14,10 +14,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
-public class CartServiceImpl implements CartService {
+public class CartServiceImpl implements CartService{
 
     @Autowired
     private CartRepository cartRepository;
@@ -42,7 +41,7 @@ public class CartServiceImpl implements CartService {
             Cartitems cartitems = new Cartitems();
             cartitems.setQuantity(quantity);
             cartitems.setProduct(product);
-            cartitems.setTotalPrice(quantity * product.getPrice());
+            cartitems.setTotalPrice(quantity*product.getPrice());
 
             Customer customer = customerRepository.findById(customerId).get();
             Cart cart = customer.getCart();
@@ -95,19 +94,6 @@ public class CartServiceImpl implements CartService {
         } catch (Exception exception) {
             response.setSuccess(false);
             response.getErrorMessages().add("error in removeFromCart");
-        }
-        return response;
-    }
-
-    @Override
-    public Response findCartItems(Integer customerId) {
-        Response response = new Response();
-        try {
-            Customer customer = customerRepository.findById(customerId).get();
-            response.setResponseData(customer.getCart().getCartitemsList());
-            response.setSuccess(true);
-        } catch (Exception e) {
-            response.getErrorMessages().add("error in findCartItems");
         }
         return response;
     }
