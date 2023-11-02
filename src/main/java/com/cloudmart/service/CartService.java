@@ -11,4 +11,6 @@ public interface CartService {
     Response removeFromCart(Integer customerId, Integer CartitemsId);
 
     Response removeAllFromCart(Integer customerId);
+
+    Response findCartItems(Integer customerId);
 }
